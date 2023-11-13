@@ -1,0 +1,79 @@
+@import "./reset";
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
+@import "./variables";
+
+@mixin Flex($justifyContent, $alignItems, $columnGap: 0px) {
+  display: flex;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+  column-gap: $columnGap;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+
+  header {
+    height: 143px;
+    width: 100%;
+    background-color: #fff;
+
+    .top-header {
+      width: 100%;
+      background: #0a0a0a;
+      padding: 8px 0px;
+      color: #fff;
+      text-align: center;
+
+      p {
+        text-transform: uppercase;
+      }
+    }
+
+    .header-container {
+      @include Flex(space-between, center);
+      max-width: 1260px;
+      width: 100%;
+      height: 113px;
+      margin: auto;
+
+      .list {
+        @include Flex(start, center, 37px);
+
+        a {
+          color: rgba(102, 102, 102, 0.85);
+        }
+
+        .active {
+          color: rgba(17, 17, 17, 0.85);
+          font-weight: 700;
+        }
+      }
+
+      .btns-section {
+        @include Flex(start, center, 12px);
+
+        .account {
+          border-radius: 4px;
+          background: #0a0a0a;
+          padding: 3px 12px;
+          color: #fff;
+          font-size: 12px;
+          height: 28px;
+          width: 91px;
+          display: inline-block;
+          line-height: 20.48px;
+        }
+
+        .cart {
+          @include Flex(center, center, 6px);
+          border-radius: 4px;
+          background: #3a3a3a;
+          padding: 3px 12px;
+          color: #fff;
+          font-size: 12px;
+          height: 28px;
+        }
+      }
+    }
+  }
+}
